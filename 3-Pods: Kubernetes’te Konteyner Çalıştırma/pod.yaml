@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: nginx
+    env: development
+  name: nginx
+  annotations:
+    type: "This is explanation of resousece type."
+spec:
+  containers:
+  - image: nginx:latest
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
