@@ -41,7 +41,7 @@ kubectl describe rs
 
 kubectl delete rs kubia
 ```
-### DaemonSet practices
+### DaemonSet practices
 
 ```
 k apply -f ds.yaml  

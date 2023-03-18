@@ -31,7 +31,7 @@ sudo chown root: /usr/local/bin/kubectl
 kubectl version --client
 ```
 
-### Install & Start Minikube.
+### Install & Start Minikube.
 
 ```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
@@ -42,7 +42,7 @@ minikube dashboards
 
 minikube delete
 ```
-### Kind Cluster
+### Kind Cluster
 ```
 kind create cluster --config cluster.yaml --name test
 ```

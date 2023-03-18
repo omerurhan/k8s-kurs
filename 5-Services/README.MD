@@ -1,6 +1,6 @@
-## Services
+## Services
 
-### Create Service
+### Create Service
 ```
 kubectl create -f service.yaml
 
@@ -44,7 +44,7 @@ gcloud container clusters delete kubia
 
 ```
 
-### Ingress Controller
+### Ingress Controller
 
 ```
 k create ns ingress-nginx
@@ -74,7 +74,7 @@ k apply -f rs-readiness.yaml
 
 k decsribe pod kubia-readiness-ddj5g
 ```
-### Headless Servis 
+### Headless Servis 
 
 ```
 k apply -f headless-service.yaml
@@ -82,4 +82,10 @@ k apply -f headless-service.yaml
 k describe svc kubia-headless
 
 k run dnsutils --image=tutum/dnsutils --command -- sleep infinity
+
+kubectl exec dnsutils -- nslookup kubia-headless
+
+k delete rs kubia-readiness
+
+k delete svc kubia-headless
 ```
