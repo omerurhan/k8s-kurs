@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kubia
+  name: kubia
+spec:
+  replicas: 3
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: kubia
+  strategy:
+    type: RollingUpdate #Recreate
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - image: omerurhan/kubia:v1
+        name: kubia
+        resources: {}
+status: {}
