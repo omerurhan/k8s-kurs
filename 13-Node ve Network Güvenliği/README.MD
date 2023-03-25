@@ -35,5 +35,8 @@ k apply -f pod-readonly-fs.yaml
 kubectl exec -it pod-with-readonly-filesystem -- touch /new-file
 kubectl exec -it pod-with-readonly-filesystem -- touch /volume/newfile
 kubectl exec -it pod-with-readonly-filesystem -- ls -la /volume
-
 ```
+
+### TODO
+
+CNI installation and NetworkPolicy Examples
