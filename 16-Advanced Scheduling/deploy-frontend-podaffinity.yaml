@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 2
+  template:
+    metadata:
+      name: frontend
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - image: omerurhan/kubia:v1
+        name: nodejs
+      affinity:
+        podAffinity:
+         requiredDuringSchedulingIgnoredDuringExecution:
+         - topologyKey: kubernetes.io/hostname
+           labelSelector:
+             matchLabels:
+              app: backend

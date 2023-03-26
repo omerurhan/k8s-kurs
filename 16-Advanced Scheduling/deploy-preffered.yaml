@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pref
+spec:
+  selector:
+    matchLabels:
+      app: pref
+  replicas: 5
+  template:
+    metadata:
+      name: pref
+      labels:
+        app: pref
+    spec:
+      containers:
+      - image: omerurhan/kubia:v1
+        name: nodejs
+      affinity:
+        nodeAffinity:
+         preferredDuringSchedulingIgnoredDuringExecution:
+         - weight: 80
+           preference:
+             matchExpressions:
+             - key: availability-zone
+               operator: In 
+               values:
+               - zone1
+         - weight: 20
+           preference:
+             matchExpressions:
+             - key: share-type
+               operator: In 
+               values:
+               - dedicated
