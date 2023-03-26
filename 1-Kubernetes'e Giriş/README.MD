@@ -18,7 +18,7 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 # Ubuntu makimesini açma kullanıcı oluşturma
 # Vscode üzerinden WSL2'de çalışan Ubuntu makinesine bağlanma
 ```
-### Ubuntu Makimesi Üzerinde Ayarların Yapılması
+### Ubuntu Makimesi Üzerinde Ayarların Yapılması
 ````
 # kubectl yükleme
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -31,7 +31,7 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 
 # kube_ps1 install
-git clone https://github.com/jonmosco/kube-ps1.git
+git clone https://github.com/jonmosco/kube-ps1.git ~/kube-ps1
 
 
 # kubectx install
@@ -39,13 +39,14 @@ sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
-git clone https://github.com/omerurhan/k8s-kurs.git
-```
-
 # gcloud cli install
 sudo apt-get install apt-transport-https ca-certificates gnupg
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install -y google-cloud-cli
-gcloud components install gke-gcloud-auth-plugin
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 gcloud init
+
+
+```
+
