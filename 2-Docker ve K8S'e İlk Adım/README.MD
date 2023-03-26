@@ -12,29 +12,6 @@ docker stop kubia
 docker rm kubia
 
 ```
-
-### Install kubectl
-
-```
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
-
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
-sudo chown root: /usr/local/bin/kubectl
-
-kubectl version --client
-```
-
-### Install & Start Minikube.
-
-```
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
-sudo install minikube-darwin-amd64 /usr/local/bin/minikube
-minikube start --driver=docker
-
-minikube dashboards
-minikube delete
-```
 ### Kind Cluster
 ```
 kind create cluster --config cluster.yaml --name test

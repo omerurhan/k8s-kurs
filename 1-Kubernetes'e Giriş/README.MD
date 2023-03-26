@@ -18,7 +18,7 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 # Ubuntu makimesini açma kullanıcı oluşturma
 # Vscode üzerinden WSL2'de çalışan Ubuntu makinesine bağlanma
 ```
-### Ubuntu Makimesi Üzerinde Ayarların Yapılması
+### Ubuntu Makinesi Üzerinde Ayarların Yapılması
 ````
 # kubectl yükleme
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -38,6 +38,11 @@ git clone https://github.com/jonmosco/kube-ps1.git ~/kube-ps1
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+# bash ayarları
+cp 
+.bash_aliases ~/.bash_aliases
+source ~/.bashrc
 
 # gcloud cli install
 sudo apt-get install apt-transport-https ca-certificates gnupg
