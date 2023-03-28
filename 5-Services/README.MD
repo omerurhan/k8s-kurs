@@ -62,11 +62,15 @@ k describe ingress ingress-kubia
 # host kaydı eklenir.
 
 curl -v kubia.example.com
-
 k get endpoints
 
 ```
+### Ingress with TLS
 
+```
+openssl genrsa -out https.key 2048
+openssl req -new -x509 -key https.key -out https.cert -days 3650 -subj /CN=www.kubia-example.com
+```
 ### ReadinessProbe Tanımlama
 
 ```

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   labels:
     run: nginx
+    version: "1.19"
     env: development
   name: nginx
   annotations:

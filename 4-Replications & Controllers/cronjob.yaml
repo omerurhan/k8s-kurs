@@ -1,9 +1,9 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: batch-job-every-fifteen-minutes
+  name: batch-job-every-five-minutes
 spec:
-  schedule: "0,15,30,45 * * * *"
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
       template:
