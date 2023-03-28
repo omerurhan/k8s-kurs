@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   name: ingress-kubia
 spec:
+  tls:
+  - hosts:
+      - www.kubia-example.com
+    secretName: tls-secret
   rules:
-  - host: "kubia.foo.com"
+  - host: "www.kubia-example.com"
     http:
       paths:
       - pathType: Prefix
