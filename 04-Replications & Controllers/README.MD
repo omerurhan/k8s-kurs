@@ -12,7 +12,7 @@ k explain pod.spec.containers.livenessProbe
 
 ```
 kubectl apply -f rc.yaml
-kubectl delete pod kubia- 
+kubectl delete pod kubia 
 kubectl get rc
 kubectl describe rc kubia
 kubectl label pod kubia- type=special --overwrite

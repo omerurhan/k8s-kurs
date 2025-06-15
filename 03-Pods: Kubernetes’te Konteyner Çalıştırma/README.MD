@@ -8,9 +8,7 @@ kubectl explain pods
 
 ```
 kubectl run nginx --image nginx:latest --dry-run=client -o yaml > pod.yaml
-
 kubectl apply -f pod.yaml
-
 k get pod nginx -o json
 
 ```
@@ -19,7 +17,6 @@ k get pod nginx -o json
 
 ```
 kubectl logs nginx
-
 kubectl logs nginx -c nginx
 ```
 
@@ -27,7 +24,6 @@ kubectl logs nginx -c nginx
 
 ```
 kubectl port-forward nginx 8080:80
-
 curl localhost:8080
 ```
 
@@ -35,13 +31,9 @@ curl localhost:8080
 
 ```
 kubectl get po --show-labels
-
 kubectl label po nginx env=debug --overwrite
-
 kubectl get po -l env=debug
-
 kubectl get po -l env=debug,run=nginx
-
 kubectl label node minikube env=test
 ```
 
@@ -49,7 +41,6 @@ kubectl label node minikube env=test
 
 ```
 kubectl annotate pod nginx mycompany.com/someannotation="foo bar"
-
 kubectl describe pod nginx
 ```
 
@@ -66,11 +57,8 @@ kubectl create ns test
 
 ```
 kubectl delete po kubia
-
 kubectl delete po -l env=debug
-
 kubectl delete po --all
-
-kubect delete ns custom-namespace
+kubectl delete ns custom-namespace
 
 ```

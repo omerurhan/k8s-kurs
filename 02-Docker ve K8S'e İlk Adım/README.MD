@@ -4,7 +4,7 @@
 ### Konteyner Build, Run, Inspect, Stop, Remove
 
 ```
-docker build -t kubia
+docker build -t kubia .
 docker run -d -p 8080:8080 kubia
 docker exec -it kubia bash
 
@@ -34,11 +34,8 @@ gcloud container clusters delete kubia
 
 ```
 kubectl run kubia --image=omerurhan/kubia --port=8080
-
 kubectl get pods
-
 kubectl scale rc kubia --replicas=3 
-
 kubecl expose pod kubia --port=8080 --type=LoadBalancer
 
 ```
