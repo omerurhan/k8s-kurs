@@ -34,6 +34,7 @@ docker push omerurhan/kubia-pet-peers-image
 kubectl edit statefulset kubia
 watch kubectl get sts,pods
 
+k apply -f service-public.yaml
 curl -X POST -d "The sun is shining" localhost:30950
 curl -X POST -d "The weather is sweet" localhost:30950
 curl -X POST -d "The weather is bad" localhost:30950

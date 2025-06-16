@@ -56,6 +56,36 @@ k delete pv
 k delete pvc
 ```
 
+### Kind PersistentVolume & PersistentVolumeClaim
+```
+k apply -f pv.yaml
+k get pv
+
+k apply -f pvc.yaml 
+k get pvc
+k describe pvc mongodb-pvc-without-sc
+
+k apply -f pod-pvc.yaml
+k exec -it mongodb -- mongosh
+
+use mystore
+db.foo.insert({name:'omer'})
+db.foo.find()
+exit 
+
+kubectl delete pod mongodb
+
+k apply -f pod-pvc.yaml
+k exec -it mongodb -- mongosh
+use mystore
+db.foo.find()
+exit
+
+k delete pod mongodb
+k delete pv 
+k delete pvc
+```
+
 ### StorageClass
 ```
 k apply -f sc.yaml

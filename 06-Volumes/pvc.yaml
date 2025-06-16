@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongodb-pvc
+  name: mongodb-pvc-without-sc
 spec:
   resources:
     requests:
-      storage: 5Gi
+      storage: 1Gi
   accessModes:
   - ReadWriteOnce
   storageClassName: ""

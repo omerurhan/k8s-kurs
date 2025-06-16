@@ -1,14 +1,29 @@
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+#  name: mongodb-pv
+#spec:
+#  capacity:
+#    storage: 10Gi
+#  accessModes:
+#  - ReadWriteOnce
+#  - ReadOnlyMany
+#  persistentVolumeReclaimPolicy: Retain
+#  gcePersistentDisk: 
+#    pdName: mongodb
+#    fsType: ext4
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mongodb-pv
 spec:
-  capacity:
-    storage: 10Gi
   accessModes:
   - ReadWriteOnce
-  - ReadOnlyMany
-  persistentVolumeReclaimPolicy: Retain
-  gcePersistentDisk: 
-    pdName: mongodb
-    fsType: ext4
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /var/local-path-provisioner/mongodb-pv
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Delete
+  volumeMode: Filesystem

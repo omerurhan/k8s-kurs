@@ -7,6 +7,7 @@ kubectl get componentstatus
 kubectl get po -o custom-columns=POD:metadata.name,NODE:spec.nodeName --sort-by spec.nodeName -n kube-system
 
 k apply -f pod-etcdclient.yaml
+k exec -it etcdclient -- sh
 etcdctl get /registry --prefix --keys-only
 etcdctl get /registry/pods --prefix --keys-only
 
